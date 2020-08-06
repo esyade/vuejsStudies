@@ -3,19 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exemplo 1: usando VueJS</title>
+    <title>Exemplo 2: usando métodos VueJS</title>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 <body>
     <div id="app">
-        {{titulo}}
+        <h2>{{titulo}}</h2>
     </div>
 </body>
 <script>
+    //objeto controlador, intermedia o que será exibido na página
     new Vue({
         el: '#app',
         data: {
-            titulo: "Usando VueJS!!!"
+            titulo: "Usando Métodos VueJS!!!"
         }
     });
 </script>
