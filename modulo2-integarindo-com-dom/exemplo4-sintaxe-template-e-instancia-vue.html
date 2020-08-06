@@ -9,6 +9,8 @@
 <body>
     <div id="app">
         <h2>{{titulo}}</h2>
+        <h2>{{saudacao()}}</h2>
+
     </div>
 </body>
 <script>
@@ -17,6 +19,11 @@
         el: '#app',
         data: {
             titulo: "Usando Métodos VueJS!!!"
+        },
+        methods:{
+            saudacao(){
+                return Math.pow()
+            }
         }
     });
 </script>
