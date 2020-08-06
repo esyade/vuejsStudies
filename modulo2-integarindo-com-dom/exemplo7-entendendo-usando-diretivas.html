@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo 2: usando métodos VueJS</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h2>{{titulo}}</h2>
+        <h2>{{saudacao()}}</h2><!-- Gerou o erro por ter o mesmo nome do atributo data da instancia-->
+        <a v-bind:href="link">Teu e-mail</a>
+        <h3 meuNome-bind="Erick">Meu nome está aqui</h3>
+    </div>
+</body>
+<script>
+    var meunome = document.querySelector("[meuNome-bind]");
+    console.log(meunome.getAttribute('meuNome-bind'));
+    //objeto controlador, intermedia o que será exibido na página
+    new Vue({
+        el: '#app',
+        data: {
+            titulo: "Usando bind de atributos html VueJS!!!",
+            link:"http://gmail.com"
+        },
+        methods:{
+            saudacao(){
+                return this.titulo
+            }
+        }
+    });
+</script>
+</html>
