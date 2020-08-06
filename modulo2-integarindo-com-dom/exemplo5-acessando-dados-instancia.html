@@ -9,7 +9,7 @@
 <body>
     <div id="app">
         <h2>{{titulo}}</h2>
-        <h2>{{saudacao()}}</h2>
+        <h2>{{titulo()}}</h2><!-- Gerou o erro por ter o mesmo nome do atributo data da instancia-->
 
     </div>
 </body>
@@ -21,7 +21,7 @@
             titulo: "Usando Métodos VueJS!!!"
         },
         methods:{
-            saudacao(){
+            titulo(){
                 return this.titulo
             }
         }
