@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo 8: Evitando re-renderização de conteúdo!!!</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h2 v-once>{{titulo}}</h2>
+        <h2>{{saudacao()}}</h2><!-- Gerou o erro por ter o mesmo nome do atributo data da instancia-->
+        <a v-bind:href="link">Teu e-mail</a>
+        <h3 meuNome-bind="Erick">Meu nome está aqui</h3>
+        <h4>{{titulo}}</h4>
+
+    </div>
+</body>
+<script>
+    var meunome = document.querySelector("[meuNome-bind]");
+    console.log(meunome.getAttribute('meuNome-bind'));
+    //objeto controlador, intermedia o que será exibido na página
+    new Vue({
+        el: '#app',
+        data: {
+            titulo: "Evitando re-renderização de conteúdo!!!",
+            link:"http://gmail.com"
+        },
+        methods:{
+            saudacao(){
+                this.titulo = "bom dia";
+                return this.titulo
+            }
+        }
+    });
+</script>
+</html>

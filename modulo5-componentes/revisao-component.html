@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revisão sobre componente</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+</head>
+<body>
+    <div id="app">
+        <contador></contador>
+    </div>
+    <script>
+        //desenvolvimento de um componente global através do vue...
+        Vue.component("contador",{
+            template:`
+            <div>
+                <span>{{contador}}</span>
+                <button @click='contador++'>+</button>
+                <button @click='contador--'>-</button>
+            </div>
+            `,
+            data(){
+                return {
+                    contador:0
+                }
+            }
+        });
+        new Vue({
+            el:"#app"
+        });
+    </script>
+</body>
+</html>
