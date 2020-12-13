@@ -9,8 +9,8 @@
 <body>
     <div id="app">
         <h2>{{titulo}}</h2>
-        <h2>{{saudacao()}}</h2>
-
+        <h2>{{saudacaoFuncionando()}}</h2>
+        <h2>{{saudacaoComErro}} aqui não é possível chamar a função se não declararmos como função o valor do double mustache</h2>
     </div>
 </body>
 <script>
@@ -21,8 +21,12 @@
             titulo: "Usando Métodos VueJS!!!"
         },
         methods:{
-            saudacao(){
-                return Math.pow()
+            saudacaoFuncionando: function(){
+                let a = Math.pow(2,3); //tudo que é retornado deve ser tratado para string
+                return a;
+            },
+            saudacaoComErro: function(){
+                return Math.pow(2,3); //tudo que é retornado deve ser tratado para string
             }
         }
     });
