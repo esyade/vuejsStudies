@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo 2: usando métodos VueJS</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body >
+    <div id="app" v-on:mousemove="capturaPosicaoMouse">
+        <h1 v-once> O contador iniciou com o valor {{contador}}</h1>
+        <h2>{{contador}}</h2>
+        <button v-on:click="somar(5,$event)">+</button>
+        <hr>
+        <h3 v-on:mousemove.stop="" style="background-color: azure;">Posicao x = {{x}}, posição y = {{y}}</h3><!--para o evento-->
+        <a v-on:click.prevent v-bind:href="link" class="btn btn-info btn-sm">Navegando para google / não navega mais</a>
+        <hr>
+        <input type="text" name="teste" v-on:keyup.p="exibirAlerta">
+    </div>
+</body>
+<script>
+    //objeto controlador, intermedia o que será exibido na página
+    new Vue({
+        el: '#app',
+        data: {
+            contador: 0,
+            x:0,
+            y:0,
+            link: "http://google.com.br"
+        },
+        methods:{
+            somar:function(passo,e){
+                console.log(e);
+                return this.contador+=passo
+            },
+            capturaPosicaoMouse: function(e){
+                this.x = e.clientX;
+                this.y = e.clientY;
+            },
+            exibirAlerta: function(){
+                confirm("digitou um p");
+            }
+        }
+    });
+</script>
+</html>
