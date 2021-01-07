@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo 15: Javascript no template</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <button type="button" v-on:click='somar'>Somar contador</button>
+        <h2>{{contador}}</h2>
+        <h1>{{contador > 10 ? 'Contador Maior que 10':'Contador Menor que 10'}}</h1>
+    </div>
+</body>
+<script>
+    //objeto controlador, intermedia o que será exibido na página
+    new Vue({
+        el: '#app',
+        data: {
+            contador:0
+        },
+        methods:{
+            somar(){
+                return this.contador++;
+            }
+        }
+    });
+</script>
+</html>

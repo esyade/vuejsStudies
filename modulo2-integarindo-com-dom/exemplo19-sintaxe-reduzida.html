@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo 19: Sintaxe Reduzida</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+       <h1>{{titulo}}</h1>
+       <hr>
+       <small>Uma forma reduzida de Two Way data Bind</small>
+       <input type="text" :bind.value="titulo" v-on:input="titulo = $event.target.value">
+       <hr>
+       <small>Uma forma reduzida de chamar eventos</small>
+       <button type="button" @click="imprimeAlerta()">Sintaxe reduzida</button>
+    </div>
+</body>
+<script>
+    //objeto controlador, intermedia o que será exibido na página
+    new Vue({
+        el: '#app',
+        data: {
+            titulo:"Texto inicial"
+        },
+        methods:{
+            imprimeAlerta(){
+                this.titulo = "clicando em botao";
+                alert('funcionando a forma reduzida');
+            }
+        }
+    });
+</script>
+</html>
