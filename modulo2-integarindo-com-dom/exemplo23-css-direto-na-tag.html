@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exemplo 20: estilos dinamicos</title>
+    <title>Exemplo 23: estilos dinamicos direto na tag</title>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <style>
         .caixas{
@@ -27,13 +27,15 @@
 <body>
     <div id="app">
         <div class="caixas">
-            <div class="demo" :class="estilos" @click="aplicarC1= !aplicarC1"></div>
+            <div class="demo" :style="{'backgroundColor':cor}"></div>
+            <div class="demo" :style="estiloPelicula"></div>
             <div class="demo"></div>
-            <div class="demo" :class="[classeCSS,giro]"></div>
         </div>
         <hr>
-    <input type="text" v-model="aplicarGirar">
-    <button type="button" @click="aplicarGirar = !aplicarGirar">Girar</button>
+    <input type="text" v-model="cor">
+    <input type="range" v-model="largura" step="0.01">
+    <input type="range" v-model="altura" step="0.01">
+    <input type="range" v-model="arredondamento" step="0.01">
 
     </div>
     
@@ -43,20 +45,18 @@
     new Vue({
         el: '#app',
         data: {
-            aplicarC1:false,
-            classeCSS:'c1',
-            aplicarGirar: false
+            cor: "red",
+            largura: 7,
+            altura: 12,
+            arredondamento: 5,
         },
         computed:{
-            estilos(){
+            estiloPelicula(){
                 return {
-                    c1: this.aplicarC1,
-                    c3: !this.aplicarC1
-                }
-            },
-            giro(){
-                return {
-                    girar: this.aplicarGirar,
+                    backgroundColor: this.cor,
+                    width: this.largura+"mm",
+                    height: this.altura+"mm",
+                    borderRadius: this.arredondamento+"mm"
                 }
             }
         }

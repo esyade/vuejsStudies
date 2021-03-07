@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo 15: Javascript no template</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <button type="button" v-on:click='aumentar'>Somar contador</button>
+        <button type="button" v-on:click='contador2++'>Somar contador 2</button>
+        <button type="button" v-on:click='diminuir'>Diminuir contador</button>
+        <h2>{{contador}} | {{contador2}}</h2>
+        <h1>{{resultado()}}</h1>
+    </div>
+</body>
+<script>
+    //As propriedades computadas servem para não deixar métodos serem processados em vão. Como ocorre
+    //aqui nestes caso. Onde o método resultado() é chamado também quando se clica em somar contador 2
+    //para resolver isso, podemos criar uma propriedade computada (computed) para realizar o calculo ou a condição
+    //As propriedades computed são sincronas, quando chamadas, necessariamente devemos obter um retorno.
+    new Vue({
+        el: '#app',
+        data: {
+            contador:0,
+            contador2:0
+        },
+        methods:{
+            aumentar(){
+                return this.contador++;
+            },
+            diminuir(){
+                return this.contador--;
+            },
+            resultado(){
+                console.log("Metodo resultado sendo chamado")
+                return this.contador >= 5 ? 'Maior ou igual a cinco' : 'Menor que cinco'
+            }
+        }
+    });
+</script>
+</html>
