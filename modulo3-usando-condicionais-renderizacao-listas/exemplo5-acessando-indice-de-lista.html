@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Renderizando listas com v-for 1</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+</head>
+<body>
+    <div id="app">
+        <ol>
+            <li v-for="(cor,i) in cores">No indice {{i}} temos a cor: {{cor}}</li>
+        </ol>
+    </div>
+
+</body>
+<script>
+    new Vue({
+        el:"#app",
+        data:{
+            cores: ["vermelho","verde","amarelo","azul"],
+            pessoas: [
+                {nome: 'Ana',idade: 26, peso: 55},
+                {nome: 'Guilherme',idade: 32, peso: 70}
+            ]
+        },
+    })
+</script>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Renderizando listas com v-for e tag template</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+       
+    </style>
+
+</head>
+<body>
+    <div id="app">
+        <ol>
+            <li v-for="pessoa in pessoas">
+                <ul>
+                    <li v-for="(valor, chave, index) in pessoa">
+                        {{chave}}: {{chave != 'carros'? valor:''}}
+                        <ol v-for="carro in pessoa.carros" v-show="chave == 'carros'">
+                            <li v-for="(valorCarro, chaveCarro, indexCarro) in carro">
+                                {{chaveCarro}}: {{valorCarro}}
+                            </li>
+                            <br>
+                        </ol>
+                    </li>
+                </ul>
+                <hr>
+            </li>
+        </ol>        
+    </div>
+
+</body>
+<script>
+    new Vue({
+        el:"#app",
+        data:{
+            pessoas: [
+                {
+                    nome: 'Mundica',
+                    idade: 27, 
+                    peso: 50, 
+                    carros:
+                    [
+                        {
+                            nome: "SUV Eclipse Cross AWD Hybrid",
+                            marca: "Mitsubishi",
+                            ano: 2018
+                        },
+                        {
+                            nome: "fiat 500 cult",
+                            marca: "fiat",
+                            ano: 2013
+                        }
+                    ]
+                },
+                {
+                    nome: 'Welixita',
+                    idade: 32, 
+                    peso: 70,
+                    carros:
+                    [
+                        {
+                            nome: "Cerato Koup SX3",
+                            marca: "Kia Motors",
+                            ano: 2013
+                        },
+                        {
+                            nome: "SUV Nissan Kicks",
+                            marca: "Nissan",
+                            ano: 2019
+                        }
+                    ]
+                }
+            ]
+        },
+    })
+</script>
+</html>

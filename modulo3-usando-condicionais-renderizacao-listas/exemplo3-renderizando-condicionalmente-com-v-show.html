@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo usando V-Show</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+</head>
+<body>
+    <div id="app">
+        <div :style="estilo" v-show="opcao == 'vermelho'">Vermelho</div>
+        <div :style="estilo" v-show="opcao == 'verde'">Verde</div>
+        <div :style="estilo" v-show="opcao == 'azul'">Azul</div>
+        <hr>
+        <br>
+        <label >Vermelho<input type="radio" v-model="opcao" value="vermelho"></label>
+        <label >Verde<input type="radio" v-model="opcao" value="verde"></label>
+        <label >Azul<input type="radio" v-model="opcao" value="azul"></label>
+
+    </div>
+
+</body>
+<script>
+    new Vue({
+        el:"#app",
+        data:{
+            opcao: "",
+        },
+        computed:{
+            estilo(){
+                if(this.opcao == "vermelho"){
+                    return{
+                        backgroundColor: "red",
+                        width: "50px",
+                        height: "50px",
+                        borderRadius: "0px 0px 0px 0px" 
+                    }
+                }
+                else if(this.opcao == "verde"){
+                    return{
+                        backgroundColor: "green",
+                        width: "50px",
+                        height: "50px",
+                        borderRadius: "0px 75px 75px 0px" 
+                    }
+                }
+                else if(this.opcao == "azul"){
+                    return{
+                        backgroundColor: "blue",
+                        width: "50px",
+                        height: "50px",
+                        borderRadius: "75px 0px 0px 75px" 
+                    }
+                }
+            }
+        }
+    })
+</script>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo 1: usando métodos VueJS</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    
+</head>
+<body>
+    <div id="app">
+        <div :style="estilos" v-if="status == 'online'">{{status == 'online' ? status:'' }}</div>
+        <div :style="estilos" v-else-if="status == 'ocupado'">{{status == 'ocupado' ? status:''}}</div>
+        <div :style="estilos" v-else-if="status == 'ausente'">{{status == 'ausente' ? status:''}}</div>
+        <div :style="estilos" v-else>offline</div>
+        <hr>
+        <template v-if="logado">
+            <label >Online<input type="radio" v-model="status" value="online"></label>
+            <label >Ocupado<input type="radio" v-model="status" value="ocupado"></label>
+            <label >Ausente<input type="radio" v-model="status" value="ausente"></label>
+        </template>
+        
+        <hr>
+        <button type="button" @click="logado = !logado">{{logado ? 'Sair': 'Entrar'}}</button>
+
+    </div>
+</body>
+<script>
+    //objeto controlador, intermedia o que será exibido na página
+    new Vue({
+        el: '#app',
+        data: {
+            status:"",
+            logado:false,
+        },
+        computed:{
+            estilos(){
+                if(this.status == "online" && this.logado){
+                    return {
+                        backgroundColor:"green",
+                        width:50+"px",
+                        height:50+"px",
+                        borderRadius:"50px 50px 50px 50px",
+                        padding:"30px 25px 25px 25px",
+                        textAlign: 'center',
+                        color: "#FFFFFF"
+                    }
+                }else if(this.status == "ocupado" && this.logado){
+                    return {
+                        backgroundColor:"red",
+                        width:50+"px",
+                        height:50+"px",
+                        borderRadius:"50px 50px 50px 50px",
+                        padding:"30px 25px 25px 25px",
+                        textAlign: 'center',
+                        color: "#FFFFFF"
+                    }
+                }else if(this.status == "ausente" && this.logado){
+                    return {
+                        backgroundColor:"orange",
+                        width:50+"px",
+                        height:50+"px",
+                        borderRadius:"50px 50px 50px 50px",
+                        padding:"30px 25px 25px 25px",
+                        textAlign: 'center',
+                        color: "#FFFFFF"
+                    }
+                }else{
+                    return {
+                        backgroundColor:"gray",
+                        width:50+"px",
+                        height:50+"px",
+                        borderRadius:"50px 50px 50px 50px",
+                        padding:"30px 25px 25px 25px",
+                        textAlign: 'center'
+                    }
+                }
+            }
+        },
+        watch:{
+            logado(antigo,novo){
+                if(this.logado){
+                    this.status = 'online'
+                }else{
+                    this.status = 'offline'
+                }
+            }
+        }
+    });
+</script>
+</html>

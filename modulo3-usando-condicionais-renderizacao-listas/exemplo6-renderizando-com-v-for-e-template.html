@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Renderizando listas com v-for e tag template</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+        .item{
+            background-color:cadetblue;
+            width: 50px;
+            height: 50px;
+            margin:20px;
+            display: inline-block;
+            border-radius: 75px 75px 75px 75px;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="app">
+        <template v-for="(cor,i) in cores">
+            <div class="item">{{i}}</div>
+        </template>
+    </div>
+
+</body>
+<script>
+    new Vue({
+        el:"#app",
+        data:{
+            cores: ["vermelho","verde","amarelo","azul"],
+            pessoas: [
+                {nome: 'Ana',idade: 26, peso: 55},
+                {nome: 'Guilherme',idade: 32, peso: 70}
+            ]
+        },
+    })
+</script>
+</html>
