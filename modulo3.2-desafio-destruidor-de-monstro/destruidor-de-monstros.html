@@ -46,12 +46,16 @@
                 <div id="ataque-monstro" :style="estiloAtaqueMonstro"></div>
             </div>
             <div id="narrador">
-                <ol reversed>
-                    <li v-for="acao in acoesPersonagens.acoesSuperHeroi">{{acao}}</li>
-                </ol>
-                <ol reversed>
-                    <li v-for="acao in acoesPersonagens.acoesMonstro">{{acao}}</li>
-                </ol>
+                <div id="narrador-superheroi">
+                    <ol reversed>
+                        <li v-for="acao in acoesPersonagens.acoesSuperHeroi">{{acao}}</li>
+                    </ol>
+                </div>
+                <div id="narrador-monstro">
+                    <ol reversed>
+                        <li v-for="acao in acoesPersonagens.acoesMonstro">{{acao}}</li>
+                    </ol>
+                </div>
             </div>
             <div id="comandosPersonagens">
                 <button type="button" class="botoes" @click="atacar">Ataque</button>
