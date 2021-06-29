@@ -7,13 +7,15 @@
     height:70px;
     background-color: #efefef;
     box-shadow: teal 0px 0px 20px;
+    text-align: center;
 }
 .barra-energia{
-    width:48.7%;
+    width:49%;
     height:auto;
     display: inline-block;
     background-color: #ccc;
-    margin: 5px;
+    margin-top: 0.3%;
+    margin-left: 0.3%;
     border:1px solid #444;
 }
 .titulo-barra-energia{
@@ -212,8 +214,9 @@ background: linear-gradient(to bottom,  #fcfff4 0%,#dfe5d7 40%,#b3bead 100%); /*
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfff4', endColorstr='#b3bead',GradientType=0 ); /* IE6-9 */
 }
 #narrador ol{
-    margin: 10px;
-    width:45%;
+    margin-top: 0.3%;
+    margin-left: 0.3%;
+    width:40%;
     float: left;
     list-style-type: none;
 }
