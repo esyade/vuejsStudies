@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio destruidor de monstros</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="destruidor-de-monstros.css">
+</head>
+
+<body>
+    <div id="jogo">
+        <div id="cenarioAtivado" v-show="start">
+            <div id="barras-energia">
+                <div class="barra-energia">
+                    <div class="titulo-barra-energia">Super-heroi</div>
+                    <div :style="estiloBarraEnergiaSuperHeroi" id="conteudoBarraEnergiaSuperHeroi">
+                        {{superHeroi.energia}}%</div>
+                </div>
+                <div class="barra-energia">
+                    <div class="titulo-barra-energia">Monstro</div>
+                    <div :style="estiloBarraEnergiaMonstro" id="conteudoBarraEnergiaMonstro">{{monstro.energia}}%</div>
+                </div>
+            </div>
+            <div id="campo-combate">
+                <div id="super-heroi">
+                    <div id="cabeca-super-heroi"></div>
+                    <div id="tronco-super-heroi"></div>
+                    <div id="bracos-super-heroi">
+                        <div id="braco-esquerdo-super-heroi"></div>
+                        <div id="braco-direito-super-heroi"></div>
+                    </div>
+                    <div id="pernas-super-heroi"></div>
+                </div>
+                <div id="ataque-super-heroi" :style="estiloAtaqueSuperHeroi"></div>
+                <div id="monstro">
+                    <div id="cabeca-monstro"></div>
+                    <div id="bracos-monstro">
+                        <div id="braco-esquerdo-monstro"></div>
+                        <div id="braco-direito-monstro"></div>
+                    </div>
+                    <div id="tronco-monstro"></div>
+                    <div id="pernas-monstro"></div>
+                </div>
+                <div id="ataque-monstro" :style="estiloAtaqueMonstro"></div>
+            </div>
+            <div id="narrador">
+                <ol reversed>
+                    <li v-for="acao in acoesPersonagens.acoesSuperHeroi">{{acao}}</li>
+                </ol>
+                <ol reversed>
+                    <li v-for="acao in acoesPersonagens.acoesMonstro">{{acao}}</li>
+                </ol>
+            </div>
+            <div id="comandosPersonagens">
+                <button type="button" class="botoes" @click="atacar">Ataque</button>
+                <button type="button" class="botoes" @click="superAtacar">Super ataque</button>
+                <button type="button" class="botoes" v-bind:disabled="(superHeroi.energia == 100 || monstro.energia == 100)" @click="regenerar">Regenerar</button>
+                <button type="button" class="botoes"  @click="seRender">Se render</button>
+
+            </div>
+        </div>
+        <div id="comandosJogo" v-show="!start">
+            <div id="resultado">
+                <h1>{{resultadoJogo}}</h1>
+            </div>
+            <button type="button" id="btn-start" @click="start = !start">Começar o jogo!</button>
+        </div>
+    </div>
+</body>
+<script src="destruidor-de-monstros.js"></script>
+</html>

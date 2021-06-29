@@ -1,0 +1,228 @@
+*{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-style: italic;
+}
+#barras-energia{
+    width:100%;
+    height:70px;
+    background-color: #efefef;
+    box-shadow: teal 0px 0px 20px;
+}
+.barra-energia{
+    width:48.7%;
+    height:auto;
+    display: inline-block;
+    background-color: #ccc;
+    margin: 5px;
+    border:1px solid #444;
+}
+.titulo-barra-energia{
+    width:100%;
+    color:white;
+    font-size: 16px;
+    text-align: center;
+    background-color: black;
+}
+#comandosPersonagens{
+    width:100%;
+    height:120px; 
+/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#f2f6f8+0,d8e1e7+50,b5c6d0+51,e0eff9+100;Grey+Gloss+%232 */
+background: #f2f6f8; /* Old browsers */
+background: -moz-linear-gradient(top,  #f2f6f8 0%, #d8e1e7 50%, #b5c6d0 51%, #e0eff9 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  #f2f6f8 0%,#d8e1e7 50%,#b5c6d0 51%,#e0eff9 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  #f2f6f8 0%,#d8e1e7 50%,#b5c6d0 51%,#e0eff9 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f6f8', endColorstr='#e0eff9',GradientType=0 ); /* IE6-9 */
+    text-align: center;
+}
+.botoes{
+    margin: 5px;
+    width:100px;
+    height: 100px;
+}
+#campo-combate{
+/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#580093+29,000000+53 */
+/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#000000+1,008fc4+22,008fc4+58,00af00+100 */
+background: #000000; /* Old browsers */
+background: -moz-linear-gradient(top,  #000000 1%, #008fc4 22%, #008fc4 58%, #00af00 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  #000000 1%,#008fc4 22%,#008fc4 58%,#00af00 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  #000000 1%,#008fc4 22%,#008fc4 58%,#00af00 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#00af00',GradientType=0 ); /* IE6-9 */
+    width:100%;
+    height:200px;
+    position: relative;
+
+}
+#super-heroi{
+    position: absolute;
+    width:50px;
+    height:100px;
+    background-color: none;
+    bottom:10%;
+    left: 25%;
+}
+#cabeca-super-heroi{
+    width:30px;
+    height:30px;
+    background-color: white;
+    border-top: 20px solid gold;
+    border-radius: 0px 50px 50px 50px;
+}
+#tronco-super-heroi{
+    width:15px;
+    height:40px;
+    background-color: white;
+    float: left;
+}
+#bracos-super-heroi{
+    margin-top: 5px;
+    width:25px;
+    height:15px;
+    background-color: none;
+    float: left;
+}
+#braco-esquerdo-super-heroi{
+    margin-top: 0px;
+    width:100%;
+    height:5px;
+    background-color: white;
+    transform: rotate(-10deg);
+}
+#braco-direito-super-heroi{
+    margin-top: 6px;
+    width:100%;
+    height:5px;
+    background-color: white;
+    transform: rotate(10deg);
+}
+#pernas-super-heroi{
+    line-height:0;
+    width:40px;
+    height:22px;
+    border-style: solid;
+    border-color: white white black white;
+    border-width: 1px 7px 6px;
+    clear: both;
+    margin-left: -15px;
+}
+#ataque-super-heroi{
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background-color: none;
+    bottom: 20px;
+    margin-left: 30%;
+    border-radius: 75px 75px 75px 75px;
+    box-shadow: none -20px 0px 25px 30px;
+}
+#monstro{
+    position: absolute;
+    width:50px;
+    height:100px;
+    background-color: none;
+    bottom: 20%;
+    right: 25%;
+}
+#cabeca-monstro{
+    width:75px;
+    height:50px;
+    background-color:palevioletred;
+    margin-left: -10px;
+    border-radius: 50px 5px 50px 5px;
+    transform: rotate(-10deg);
+    border: 1px solid green
+}
+#tronco-monstro{
+    width:60px;
+    height:60px;
+    background-color: palevioletred;
+    float: left;
+    border-radius:50px 75px 40px 75px;
+    margin-top: -15px;
+}
+#bracos-monstro{
+    width:35px;
+    height:15px;
+    background-color: none;
+    float: left;
+    margin-left: -30px;
+}
+#braco-esquerdo-monstro{
+    margin-top: 0px;
+    width:100%;
+    height:8px;
+    background-color: palevioletred;
+    transform: rotate(50deg);
+}
+#braco-direito-monstro{
+    margin-top: 0px;
+    width:100%;
+    height:8px;
+    background-color: palevioletred;
+    transform: rotate(20deg);
+}
+#pernas-monstro{
+    line-height:0;
+    width:15px;
+    height:22px;
+    border-style: solid;
+    border-color: palevioletred palevioletred black palevioletred;
+    border-width: 1px 20px 6px;
+    clear: both;
+    margin-left: 10px;
+}
+#ataque-monstro{
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background-color: none;
+    bottom: 20px;
+    margin-left: 65%;
+    border-radius: 75px 75px 75px 75px;
+    box-shadow: none 20px 0px 25px 30px;
+}
+#comandosJogo{
+    width:100%;
+    background-color: black;
+    opacity: 0.65;
+    height: 99%;
+    position: absolute;
+    top: 0;
+    text-align: center;
+    vertical-align: middle;
+}
+#resultado{
+    background-color: chartreuse;
+    opacity: 1;
+}
+#btn-start{
+    opacity: 1;
+    font-size: 25px;
+    padding: 5px;
+}
+#narrador{
+    width:100%;
+    height:100px;
+    overflow-y: scroll;
+    text-align: center;
+/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#fcfff4+0,dfe5d7+40,b3bead+100;Wax+3D+%233 */
+background: #fcfff4; /* Old browsers */
+background: -moz-linear-gradient(top,  #fcfff4 0%, #dfe5d7 40%, #b3bead 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  #fcfff4 0%,#dfe5d7 40%,#b3bead 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  #fcfff4 0%,#dfe5d7 40%,#b3bead 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfff4', endColorstr='#b3bead',GradientType=0 ); /* IE6-9 */
+}
+#narrador ol{
+    margin: 10px;
+    width:45%;
+    float: left;
+    list-style-type: none;
+}
+
+#narrador ol li{
+    font-size: 20px;
+    animation-duration: 1s;
+    text-shadow: greenyellow 0px 2px 5px;
+    transition: 0.3s;
+}
+
+
