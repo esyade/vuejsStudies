@@ -9,7 +9,7 @@ Vuejs 2 and any resources, how: Vue Router, Vuex.
 
 ## Completed Challenges.
 
-Section 4, Matador de Monstros: https://esyade.github.io/vuejsStudies/modulo3.2-desafio-destruidor-de-monstro/destruidor-de-monstros.html
+Section 4, Monster destroyer: https://esyade.github.io/vuejsStudies/modulo3.2-desafio-destruidor-de-monstro/destruidor-de-monstros.html
 
 ## Autor
 Erick C. S.
