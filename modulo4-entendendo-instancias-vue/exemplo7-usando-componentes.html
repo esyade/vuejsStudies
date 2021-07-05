@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo 3: como o vue gerencia os dados</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <comp></comp>
+    </div>
+</body>
+<script>
+    /*
+    A aplicação não consegue interpolar a variável vm2.titulo2 na tela.
+    */
+    Vue.component('comp',{
+        template:"<h1>Componente Vue.js 2</h1>"
+    });
+
+    const vm = new Vue({
+        el:"#app"
+    });
+</script>
+</html>

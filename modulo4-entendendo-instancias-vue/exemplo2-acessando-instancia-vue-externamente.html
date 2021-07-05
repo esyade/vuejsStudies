@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo 2: acessando instância vue externamente</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app1"><button class="" @click="alterarTitulo1">Adiciona X</button> -> {{titulo1}}</div>
+    <div id="app2"><button class="" @click="alterarTitulo2">Adiciona Y</button> -> {{titulo2}}</div>
+
+</body>
+<script>
+    /*
+    Cenário aplicável com essa estratégia: uma mini aplicação vuejs para controlar
+    uma parte da página. Quando não se usa o vue como o framework que controla toda a
+    aplicação, mas sim uma parte dela.
+    */
+    const vm1 = new Vue({
+        el: '#app1',
+        data: {
+            titulo1: " X |",
+            erro2:"..."
+        },
+        methods:{
+            alterarTitulo1(){
+                this.titulo1 += " X |";
+                vm2.titulo2 += " Y |";
+            }
+        }
+    });
+    const vm2 = new Vue({
+        el: '#app2',
+        data: {
+            titulo2: " Y |",
+            erro2:"..."
+        },
+        methods:{
+            alterarTitulo2(){
+                this.titulo2 += " Y |";
+                vm1.titulo1 += " X |";
+            }
+        }
+    });
+</script>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo 11: O ciclo de vida da instância Vue</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h1>{{titulo}}</h1>
+        <button @click ="titulo += '_ /'">Adicionar</button>
+        <button @click ="$destroy()">Destruir Instância</button>
+
+    </div>
+</body>
+<script>
+    /*
+    Aplicando o método $destroy() para destruir a instância. Após clicar em Destroir Instancia,
+    não será possível mais adicionar nenhum conteúdo.
+    */
+    const vm = new Vue({
+        el:"#app",
+        data:{
+            titulo: "/"
+        },
+        beforeCreate() {
+            console.log("Antes de criar");
+        },
+        created() {
+            console.log("criado");
+        },
+        beforeMount() {
+            console.log("antes de montar");
+        },
+        mounted() {
+            console.log("montado");
+        },
+        beforeUpdate() {
+            console.log("antes de atualizar");
+        },
+        updated() {
+            console.log("atualizado");
+        },
+        beforeDestroy() {
+            console.log("antes de destruir");
+        },
+        destroyed() {
+            console.log("destruido");
+        },
+    });
+</script>
+</html>
